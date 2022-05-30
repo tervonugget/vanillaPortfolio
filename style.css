@@ -1,0 +1,248 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: "Lexend", Helvetica, sans-serif;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ------------ */
+/* My CSS below */
+/* ------------ */
+
+:root {
+  --co-dark: 231 40% 32%;
+  --co-light: 116 68% 85%;
+  --co-white: 32 2% 98%;
+}
+
+*,
+*::before,
+*::after {
+  scrollbar-color: hsl(var(--co-dark)) hsl(var(--co-white));
+}
+
+body {
+  width: 100%;
+  height: 100%;
+}
+
+/* Colors */
+
+.bg-dark {
+  background-color: hsl(var(--co-dark));
+}
+
+.bg-light {
+  background-color: hsl(var(--co-light));
+}
+
+.bg-white {
+  background-color: hsl(var(--co-white));
+}
+
+.text-dark {
+  color: hsl(var(--co-dark));
+}
+
+.text-light {
+  color: hsl(var(--co-light));
+}
+
+.text-white {
+  color: hsl(var(--co-white));
+}
+
+/* --------- */
+/* Utilities */
+/* --------- */
+
+.flex {
+  display: flex;
+  gap: var(--gap, 1rem);
+}
+
+.grid {
+  display: grid;
+  gap: var(--gap, 1rem);
+}
+
+.container {
+  padding: 1rem;
+  margin-inline: auto;
+  max-width: 60rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* End of utilities */
+
+h1 {
+  font-size: 3rem;
+  line-height: 1;
+  margin-bottom: 2rem;
+}
+
+h2 {
+  font-size: 1.25rem;
+}
+
+.flow>*:not(first-child) {
+  margin-bottom: 2rem;
+}
+
+.wrapper {
+  margin: 0 auto;
+}
+
+.tile-cont {
+  grid-template-columns: repeat(auto-fill, minmax(var(--auto-grid-min-size, 20rem), 1fr));
+  margin: 0 auto;
+}
+
+.tile {
+  padding: 2em;
+  box-shadow: none;
+  position: relative;
+  transition: transform 300ms ease-in-out, box-shadow 400ms ease, background 100ms ease;
+}
+
+.tile:hover,
+.tile:focus-within {
+  background-color: hsl(var(--co-dark)/0.9);
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.3);
+  transform: translateY(-0.25rem);
+}
+
+.tile>*+* {
+  margin-top: 1em;
+}
+
+h3 {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.breakout-button {
+  font: inherit;
+  font-weight: 600;
+  padding: 0.6rem 2rem;
+  outline: 2px solid;
+  border: none;
+  transition: background 100ms ease;
+  position: static;
+}
+
+.breakout-button,
+.breakout-button::before {
+  cursor: pointer;
+}
+
+.breakout-button::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.breakout-button:hover {
+  background-color: hsl(var(--co-light)/0.9);
+  text-decoration: underline;
+}
+
+hr {
+  color: hsl(var(--co-dark));
+  margin-bottom: 2rem;
+}
+
+footer {
+  text-align: center;
+  font-size: 0.8rem;
+  color: hsl(var(--co-dark)/0.5);
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+}
