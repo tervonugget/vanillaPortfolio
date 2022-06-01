@@ -69,5 +69,4 @@ function renderDigits() {
   ones.innerHTML = onesCount;
   tens.innerHTML = tensCount;
   hundreds.innerHTML = hundredsCount;
-  console.log(onesCount + tensCount + hundredsCount);
 }
